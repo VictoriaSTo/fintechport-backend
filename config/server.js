@@ -1,3 +1,6 @@
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
 module.exports = ({ env }) => ({
   host: env('HOST', process.env.HOST),
   port: env.int('PORT', process.env.PORT),
