@@ -4,18 +4,29 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') })
 console.log(process.env.CLOUDINARY_SECRET)
 console.log(process.env.CLOUDINARY_KEY)
 
-module.exports = ({
-  env
-}) => ({
+module.exports = ({ env }) => ({
   upload: {
      provider: 'cloudinary',
      providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        cloud_name: `${CLOUDINARY_NAME}`,
+        api_key: `${CLOUDINARY_KEY}`,
+        api_secret: `${CLOUDINARY_SECRET}`,
      },
   },
 });
+
+// module.exports = ({
+//   env
+// }) => ({
+//   upload: {
+//      provider: 'cloudinary',
+//      providerOptions: {
+//         cloud_name: env('CLOUDINARY_NAME'),
+//         api_key: env('CLOUDINARY_KEY'),
+//         api_secret: env('CLOUDINARY_SECRET'),
+//      },
+//   },
+// });
 
 // {
 //   "provider": "cloudinary",
