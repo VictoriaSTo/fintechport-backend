@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       connector: 'mongoose',
       settings: {
         host: `${process.env.DATABASE_HOST}`,
-        srv: `${process.env.DATABASE_SRV}`,
+        srv: true,
         port: `${process.env.DATABASE_PORT}`,
         database: `${process.env.DATABASE_NAME}`,
         username: `${process.env.DATABASE_USERNAME}`,
@@ -16,7 +16,7 @@ module.exports = ({ env }) => ({
       },
       options: {
         authenticationDatabase: `${process.env.AUTHENTICATION_DATABASE}`,
-        ssl: `${process.env.DATABASE_SSL}`,
+        ssl: true,
       },
     },
   },
